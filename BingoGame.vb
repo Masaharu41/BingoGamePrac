@@ -3,6 +3,7 @@
 
 Option Strict On
 Option Explicit On
+Option Compare Text
 
 'TODO
 '[] Start New Game
@@ -14,9 +15,16 @@ Option Explicit On
 Module BingoGame
 
     Sub Main()
-        Game2.Display()
+        Dim userInput As String
+        Dim tracker(14, 4) As Boolean ' each letter had 15 unique #
 
-
+        Do
+            Game2.NewGame()
+            Console.Clear()
+            Game2.Display()
+            Console.WriteLine("Prompt")
+            userInput = Console.ReadLine()
+        Loop Until userInput = "q"
         Console.Read()
     End Sub
 
